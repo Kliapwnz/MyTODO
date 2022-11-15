@@ -20,6 +20,8 @@ function App() {
 
     }
 
+    let afterFilterTasks=tasks.filter(el=>el.isDone)
+
     return (
         <div className="App">
             <Todolist title="What to learn"
