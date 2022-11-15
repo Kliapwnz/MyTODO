@@ -11,11 +11,18 @@ function App() {
         { id: 5, title: "Dota", isDone: false }
     ]
 
-
+const removeTask=() => {
+    console.log("123")
+}
 
     return (
         <div className="App">
-            <Todolist title = "What to learn" tasks={tasks1}/>
+            <Todolist title = "What to learn"
+                      tasks={tasks1}
+                      removeTask={removeTask}
+
+
+            />
         </div>
     );
 }

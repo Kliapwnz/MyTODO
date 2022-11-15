@@ -1,8 +1,11 @@
 import React from "react";
 
+
+
 type TodolistPropsType = {
     title: string
     tasks: Array<TasksPropsType>
+    removeTask: ()=> void
 }
 
 type TasksPropsType = {
