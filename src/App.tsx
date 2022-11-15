@@ -3,7 +3,7 @@ import './App.css';
 import {Todolist} from "./Todolist";
 
 function App() {
-    let [tasks, setTasks] =useState([
+    let [tasks, setTasks] = useState([
         {id: 1, title: "HTML&CSS", isDone: true},
         {id: 2, title: "JS", isDone: true},
         {id: 3, title: "ReactJS", isDone: false},
@@ -11,16 +11,25 @@ function App() {
         {id: 5, title: "Dota", isDone: false}
     ])
 
+    let [filteredValue, setFilteredValue] = useState("All")
+
     const removeTask = (taskId: number) => {
         setTasks(tasks.filter(el => el.id !== taskId))
     }
 
-    const filteredTasks=(filterValue:string) => {
-        console.log(filterValue)
+    let afterFilterTasks = tasks
+    if (filteredValue === "Active") {
+        afterFilterTasks = tasks.filter(el => !el.isDone)
+    }
+    if (filteredValue === "Completed") {
+        afterFilterTasks = tasks.filter(el => el.isDone)
+    }
+
+    const filteredTasks = (filteredValue: string) => {
+        setFilteredValue(filteredValue)
 
     }
 
-    let afterFilterTasks=tasks.filter(el=>el.isDone)
 
     return (
         <div className="App">
