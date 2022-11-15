@@ -13,7 +13,7 @@ function App() {
 
 const removeTask=(taskId: number) => {
     tasks=tasks.filter(el=> el.id !==taskId)
-    console.log(tasks)
+
 }
 
     return (
