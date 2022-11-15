@@ -11,7 +11,7 @@ function App() {
         { id: 5, title: "Dota", isDone: false }
     ]
 
-const removeTask=() => {
+const removeTask=(taskId: number) => {
     console.log("123")
 }
 

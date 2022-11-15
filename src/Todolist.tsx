@@ -5,7 +5,7 @@ import React from "react";
 type TodolistPropsType = {
     title: string
     tasks: Array<TasksPropsType>
-    removeTask: (id: number)=> void
+    removeTask: (taskId: number)=> void
 }
 
 type TasksPropsType = {
