@@ -24,6 +24,7 @@ function App() {
             <Todolist title="What to learn"
                       tasks={tasks}
                       removeTask={removeTask}
+                      filteredTasks={filteredTasks}
 
 
             />
