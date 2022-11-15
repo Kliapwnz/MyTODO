@@ -12,7 +12,7 @@ function App() {
     ]
 
 const removeTask=(taskId: number) => {
-    console.log("123")
+    console.log(taskId)
 }
 
     return (
