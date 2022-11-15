@@ -24,7 +24,7 @@ export const Todolist = (props: TodolistPropsType) => {
                     return (
                         <li key={el.id}>
                             <button onClick={() => {
-                                alert(el.id)
+                                console.log(el.id)
                             }}>✖️
                             </button>
                             <input type="checkbox" checked={el.isDone}/>
