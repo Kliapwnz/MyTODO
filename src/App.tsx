@@ -2,6 +2,9 @@ import React, {useState} from 'react';
 import './App.css';
 import {Todolist} from "./Todolist";
 
+type FilterValueType="All" | "Active" | "Completed"
+
+
 function App() {
     let [tasks, setTasks] = useState([
         {id: 1, title: "HTML&CSS", isDone: true},
