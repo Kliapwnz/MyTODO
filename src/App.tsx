@@ -15,6 +15,10 @@ function App() {
         setTasks(tasks.filter(el => el.id !== taskId))
     }
 
+    const filteredTasks=() => {
+
+    }
+
     return (
         <div className="App">
             <Todolist title="What to learn"
