@@ -15,8 +15,8 @@ function App() {
         setTasks(tasks.filter(el => el.id !== taskId))
     }
 
-    const filteredTasks=() => {
-        console.log("123")
+    const filteredTasks=(filterValue:string) => {
+        console.log(filterValue)
 
     }
 

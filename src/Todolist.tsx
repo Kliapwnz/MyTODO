@@ -5,7 +5,7 @@ type TodolistPropsType = {
     title: string
     tasks: Array<TasksPropsType>
     removeTask: (taskId: number) => void
-    filteredTasks:()=> void
+    filteredTasks:(filterValue:string)=> void
 }
 
 type TasksPropsType = {
