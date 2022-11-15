@@ -38,9 +38,9 @@ export const Todolist = (props: TodolistPropsType) => {
 
             </ul>
             <div>
-                <button onClick={()=>{props.filteredTasks()}}>All</button>
-                <button onClick={()=>{props.filteredTasks()}}>Active</button>
-                <button onClick={()=>{props.filteredTasks()}}>Completed</button>
+                <button onClick={()=>{props.filteredTasks(All)}}>All</button>
+                <button onClick={()=>{props.filteredTasks(Active)}}>Active</button>
+                <button onClick={()=>{props.filteredTasks(Completed)}}>Completed</button>
             </div>
         </div>
     )
