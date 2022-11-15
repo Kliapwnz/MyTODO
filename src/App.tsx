@@ -8,7 +8,7 @@ function App() {
         {id: 2, title: "JS", isDone: true},
         {id: 3, title: "ReactJS", isDone: false},
         {id: 4, title: "Rest API", isDone: false},
-        {id: 5, title: "Dota", isDone: false}
+        {id: 5, title: "Dota", isDone: true}
     ])
 
     let [filter, setFiler] = useState("All")
