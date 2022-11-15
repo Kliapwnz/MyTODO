@@ -16,6 +16,7 @@ function App() {
     }
 
     const filteredTasks=() => {
+        console.log("123")
 
     }
 
