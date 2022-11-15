@@ -11,22 +11,22 @@ function App() {
         {id: 5, title: "Dota", isDone: false}
     ])
 
-    let [filteredValue, setFilteredValue] = useState("All")
+    let [filter, setFiler] = useState("All")
 
     const removeTask = (taskId: number) => {
         setTasks(tasks.filter(el => el.id !== taskId))
     }
 
     let afterFilterTasks = tasks
-    if (filteredValue === "Active") {
+    if (filter === "Active") {
         afterFilterTasks = tasks.filter(el => !el.isDone)
     }
-    if (filteredValue === "Completed") {
+    if (filter === "Completed") {
         afterFilterTasks = tasks.filter(el => el.isDone)
     }
 
-    const filteredTasks = (filteredValue: string) => {
-        setFilteredValue(filteredValue)
+    const filteredTasks = (filterValue: string) => {
+        setFiler(filterValue)
 
     }
 
