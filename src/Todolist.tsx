@@ -45,6 +45,10 @@ export function Todolist(props: PropsType) {
         props.changeFilter("completed")
     }
 
+    const changeFilterTsarHandler = (filterValue:FilterValuesType) => {
+        props.changeFilter(filterValue)
+    }
+
     return <div>
         <h3>{props.title}</h3>
         <div>
@@ -64,9 +68,9 @@ export function Todolist(props: PropsType) {
             }
         </ul>
         <div>
-            <button onClick={changeFilterHandlerAll}>All</button>
-            <button onClick={changeFilterHandlerActive}>Active</button>
-            <button onClick={changeFilterHandlerCompleted}>Completed</button>
+            <button onClick={()=>changeFilterTsarHandler("all")}>All</button>
+            <button onClick={()=>changeFilterTsarHandler("active")}>Active</button>
+            <button onClick={()=>changeFilterTsarHandler("completed")}>Completed</button>
         </div>
     </div>
 }
