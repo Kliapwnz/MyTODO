@@ -21,12 +21,10 @@ export function Todolist(props: PropsType) {
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         setTitle(e.currentTarget.value)
     }
-
     const addTaskHandler = () => {
         props.addTask(title)
         setTitle("")
     }
-
     const onKeyDownHandler = (e: KeyboardEvent<HTMLInputElement>) => {
         if (e.key === "Enter") {
             addTaskHandler()
@@ -36,16 +34,14 @@ export function Todolist(props: PropsType) {
     const changeFilterHandlerAll = () => {
         props.changeFilter("all")
     }
-
     const changeFilterHandlerActive = () => {
         props.changeFilter("active")
     }
-
     const changeFilterHandlerCompleted = () => {
         props.changeFilter("completed")
     }
 
-    const changeFilterTsarHandler = (filterValue:FilterValuesType) => {
+    const changeFilterTsarHandler = (filterValue: FilterValuesType) => {
         props.changeFilter(filterValue)
     }
 
@@ -68,9 +64,9 @@ export function Todolist(props: PropsType) {
             }
         </ul>
         <div>
-            <button onClick={()=>changeFilterTsarHandler("all")}>All</button>
-            <button onClick={()=>changeFilterTsarHandler("active")}>Active</button>
-            <button onClick={()=>changeFilterTsarHandler("completed")}>Completed</button>
+            <button onClick={() => changeFilterTsarHandler("all")}>All</button>
+            <button onClick={() => changeFilterTsarHandler("active")}>Active</button>
+            <button onClick={() => changeFilterTsarHandler("completed")}>Completed</button>
         </div>
     </div>
 }
