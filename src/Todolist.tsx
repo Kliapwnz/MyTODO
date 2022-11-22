@@ -26,8 +26,9 @@ export function Todolist(props: PropsType) {
             }
             return (
                 <li key={t.id}>
-                    <button onClick={removeTaskHandler}>x
-                    </button>
+                    {/*<button onClick={removeTaskHandler}>x*/}
+                    {/*</button>*/}
+                    <Button buttonName={"x"} callBack={removeTaskHandler}/>
                     <input type="checkbox" checked={t.isDone}/>
                     <span>{t.title}</span>
                 </li>)
