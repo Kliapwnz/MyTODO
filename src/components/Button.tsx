@@ -6,8 +6,12 @@ type PropsType = {
 }
 
 
-export const Button = () => {
+
+export const Button = (props:PropsType) => {
+    const onClickHandler = () => {
+        props.callBack()
+    }
     return (
-        <button></button>
+        <button onClick={onClickHandler}>{props.buttonName}</button>
     )
 }
