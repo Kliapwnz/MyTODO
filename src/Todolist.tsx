@@ -17,6 +17,7 @@ type PropsType = {
 
 export function Todolist(props: PropsType) {
     const [title, setTitle] = useState("")
+
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         setTitle(e.currentTarget.value)
     }
@@ -30,6 +31,18 @@ export function Todolist(props: PropsType) {
         if (e.key === "Enter") {
             addTaskHandler()
         }
+    }
+
+    const changeFilterHandlerAll = () => {
+        props.changeFilter("all")
+    }
+
+    const changeFilterHandlerActive = () => {
+        props.changeFilter("active")
+    }
+
+    const changeFilterHandlerCompleted = () => {
+        props.changeFilter("completed")
     }
 
     return <div>
@@ -51,21 +64,9 @@ export function Todolist(props: PropsType) {
             }
         </ul>
         <div>
-            <button onClick={() => {
-                props.changeFilter("all")
-            }}>
-                All
-            </button>
-            <button onClick={() => {
-                props.changeFilter("active")
-            }}>
-                Active
-            </button>
-            <button onClick={() => {
-                props.changeFilter("completed")
-            }}>
-                Completed
-            </button>
+            <button onClick={changeFilterHandlerAll}>All</button>
+            <button onClick={changeFilterHandlerActive}>Active</button>
+            <button onClick={changeFilterHandlerCompleted}>Completed</button>
         </div>
     </div>
 }
