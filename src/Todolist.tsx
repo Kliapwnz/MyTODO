@@ -18,6 +18,21 @@ type PropsType = {
 export function Todolist(props: PropsType) {
     const [title, setTitle] = useState("")
 
+    const mappedTask=
+        props.tasks.map(t => {
+
+            const removeTaskHandler = () => {
+                props.removeTask(t.id)
+            }
+            return (
+                <li key={t.id}>
+                    <button onClick={removeTaskHandler}>x
+                    </button>
+                    <input type="checkbox" checked={t.isDone}/>
+                    <span>{t.title}</span>
+                </li>)
+        })
+
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         setTitle(e.currentTarget.value)
     }
@@ -44,10 +59,10 @@ export function Todolist(props: PropsType) {
     const changeFilterTsarHandler = (filterValue: FilterValuesType) => {
         props.changeFilter(filterValue)
     }
-
-    const removeTaskHandler = (tId:string) => {
-        props.removeTask(tId)
-    }
+    //
+    // const removeTaskHandler = (tId:string) => {
+    //     props.removeTask(tId)
+    // }
 
     return <div>
         <h3>{props.title}</h3>
@@ -56,20 +71,7 @@ export function Todolist(props: PropsType) {
             <button onClick={addTaskHandler}>+</button>
         </div>
         <ul>
-            {
-                props.tasks.map(t => {
-
-                    // const removeTaskHandler = () => {
-                    //     props.removeTask(t.id)
-                    // }
-                    return (
-                        <li key={t.id}>
-                            <button onClick={()=>removeTaskHandler(t.id)}>x
-                            </button>
-                            <input type="checkbox" checked={t.isDone}/>
-                            <span>{t.title}</span>
-                        </li>)
-                })}
+            {mappedTask}
         </ul>
         <div>
             <button onClick={() => changeFilterTsarHandler("all")}>All</button>
