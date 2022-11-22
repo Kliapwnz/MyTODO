@@ -45,6 +45,10 @@ export function Todolist(props: PropsType) {
         props.changeFilter(filterValue)
     }
 
+    const removeTaskHandler = (tId:string) => {
+        props.removeTask(tId)
+    }
+
     return <div>
         <h3>{props.title}</h3>
         <div>
@@ -55,11 +59,12 @@ export function Todolist(props: PropsType) {
             {
                 props.tasks.map(t => {
 
+                    // const removeTaskHandler = () => {
+                    //     props.removeTask(t.id)
+                    // }
                     return (
                         <li key={t.id}>
-                            <button onClick={() => {
-                                props.removeTask(t.id)
-                            }}>x
+                            <button onClick={()=>removeTaskHandler(t.id)}>x
                             </button>
                             <input type="checkbox" checked={t.isDone}/>
                             <span>{t.title}</span>
