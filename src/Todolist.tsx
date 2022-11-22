@@ -18,8 +18,7 @@ type PropsType = {
 export function Todolist(props: PropsType) {
     const [title, setTitle] = useState("")
 
-    const mappedTask=
-        props.tasks.map(t => {
+    const mappedTask= props.tasks.map(t => {
 
             const removeTaskHandler = () => {
                 props.removeTask(t.id)
