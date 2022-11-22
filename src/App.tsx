@@ -18,7 +18,7 @@ function App() {
     const addTask = (valueTitle:string) => {
         const newTask:TaskType= { id: v1(), title: valueTitle, isDone: false }
 
-        console.log(tasks, newTask)
+        console.log([...tasks, newTask])
     }
 
     function removeTask(id: string) {
