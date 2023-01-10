@@ -60,10 +60,7 @@ function App() {
        let newId=v1()
         let newTodo:TodolistType= {id:newId, title:title, filter:"all"}
         setTodolists([newTodo, ...todolists])
-        setTasks({...tasks, [newId]:[
-                {id: v1(), title: "Ouch", isDone: true},
-                {id: v1(), title: "BamBum", isDone: true}
-            ]})
+        setTasks({...tasks, [newId]:[]})
     }
 
     function changeStatus(id: string, isDone: boolean, todolistId: string) {
