@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import './App.css';
 import {TaskType, Todolist} from './Todolist';
 import {v1} from 'uuid';
+import {AddItemForm} from "./AddItemForm";
 
 export type FilterValuesType = "all" | "active" | "completed";
 type TodolistType = {
@@ -55,6 +56,13 @@ function App() {
         setTasks({...tasks});
     }
 
+    const addTodolist=(title:string)=>{
+       let newId=v1()
+        let newTodo:TodolistType= {id:newId, title:title, filter:"all"}
+        setTodolists([newTodo, ...todolists])
+        setTasks({...tasks, [newId]:[]})
+    }
+
     function changeStatus(id: string, isDone: boolean, todolistId: string) {
         //достанем нужный массив по todolistId:
         let todolistTasks = tasks[todolistId];
@@ -87,6 +95,7 @@ function App() {
 
     return (
         <div className="App">
+            <AddItemForm addItem={addTodolist}/>
             {
                 todolists.map(tl => {
                     let allTodolistTasks = tasks[tl.id];

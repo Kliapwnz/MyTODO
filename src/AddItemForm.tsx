@@ -11,7 +11,7 @@ export const AddItemForm = (props:PropsType) => {
     const addTask = () => {
         let newTitle = title.trim();
         if (newTitle !== "") {
-            props.addItem(newTitle, props.id);
+            props.addItem(title);
             setTitle("");
         } else {
             setError("Title is required");

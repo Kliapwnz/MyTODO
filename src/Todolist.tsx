@@ -50,6 +50,9 @@ export function Todolist(props: PropsType) {
     const onAllClickHandler = () => props.changeFilter("all", props.id);
     const onActiveClickHandler = () => props.changeFilter("active", props.id);
     const onCompletedClickHandler = () => props.changeFilter("completed", props.id);
+const addTaskHandler=(title:string)=>{
+    props.addTask(title, props.id)
+}
 
     return <div>
         <h3> {props.title}
@@ -64,7 +67,7 @@ export function Todolist(props: PropsType) {
         {/*    <button onClick={addTask}>+</button>*/}
         {/*    {error && <div className="error-message">{error}</div>}*/}
         {/*</div>*/}
-        <AddItemForm addItem={props.addTask}/>
+        <AddItemForm addItem={addTaskHandler}/>
         <ul>
             {
                 props.tasks.map(t => {
